@@ -76,7 +76,8 @@ SELECT
     b.DatumVerschickt,
     b.DatumAntwort,
     b.Einladung,
-    b.DatumGespraech
+    b.DatumGespraech,
+    b.Status
 FROM
     Bewerbungen b
 INNER JOIN Institutionen i ON b.Institutionstyp = i.ID
