@@ -20,7 +20,7 @@ def anzeige_bewerbungen(x): # x: Wird von der filter-Option übergeben; 1 für a
     datenbank = sqlite3.connect("Bewerbungen.db")
     cur = datenbank.cursor()
     if x == 1:
-        cur.execute("SELECT * FROM anzeige_bewerbungen")
+        cur.execute("SELECT * FROM anzeige_bewerbungen WHERE Status IS NOT 'Bewerbung nicht fertiggestellt'")
     elif x == 2:
         cur.execute("SELECT * FROM anzeige_bewerbungen WHERE Status IN ('Ausschreibung gespeichert', 'In Bearbeitung', 'Fertig, noch nicht abgeschickt')")
     bewerbungen = cur.fetchall()
